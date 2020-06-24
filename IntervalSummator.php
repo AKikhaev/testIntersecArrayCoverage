@@ -66,7 +66,7 @@ class IntervalSummator
 try {
     if (isset($_POST['array'])) {
         $data = json_decode($_POST['array'],true,9,JSON_THROW_ON_ERROR);
-        $summator = new IntervalSummator([ [1,4],  [7, 10],  [3, 5] ]);
+        $summator = new IntervalSummator($data); //[ [1,4],  [7, 10],  [3, 5] ]
         $summ = $summator->calc();
         echo $summ;
     } else throw new Exception('Вам требуется передать массив чисел в формате json!');
